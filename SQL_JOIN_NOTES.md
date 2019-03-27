@@ -18,3 +18,12 @@ FROM customers AS cus
 LEFT JOIN orders AS o
 ON o.customer = cus.id;
 ```
+
+<!-- Find the salesperson that has no sales -->
+```
+SELECT salespersons.name as lazy_salespeople
+FROM salespersons
+LEFT JOIN orders
+ON orders.salesperson = salespersons.id
+WHERE orders.id is null
+```
