@@ -2,14 +2,16 @@
 const express = require('express');
 const helmet = require('helmet');
 const knex = require('knex');
+const knexConfig = require('./knexfile').development;
 
-const knexConfig = {
-  client: 'sqlite3',
-  connection: {
-    filename: './data/rolex.db3',
-  },
-  useNullAsDefault: true, // needed for sqlite
-};
+//  We dont need this object anymore, we'll import it from ./knexfile
+// const knexConfig = {
+//   client: 'sqlite3',
+//   connection: {
+//     filename: './data/rolex.db3',
+//   },
+//   useNullAsDefault: true, // needed for sqlite
+// };
 const db = knex(knexConfig);
 
 const server = express();

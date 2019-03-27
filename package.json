@@ -4,7 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon"
+    "server": "nodemon",
+    "initdb": "knex init",
+    "table1": "knex migrate:make createRolesTable",
+    "table2": "knex migrate:make createUsersTable",
+    "migrate": "knex migrate:latest",
+    "seed1": "knex seed:make 01-roles",
+    "seed2": "knex seed:make 02-users",
+    "runseed1": "knex seed:run 01-roles",
+    "runseed2": "knex seed:run 02-users",
+    "runseeds": "knex seed:run",
+    "rollback": "knex migrate:rollback"
   },
   "keywords": [],
   "author": "Web XVI",
